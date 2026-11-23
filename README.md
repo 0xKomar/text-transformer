@@ -107,10 +107,9 @@ Operacja rozpoznaje wyrażenia ze słownika niezależnie od wielkości liter i z
 
 - `Pieczywo to na przykład chleb i bułki` → `Pieczywo to np. chleb i bułki`
 - `między innymi` → `m.in.`
+- `i tym podobne` → `itp.`
 
-- `i tym podobne` → `itd.`
-
-Pełna lista skrótów jest do uzgodnienia z Product Ownerem. Para `i tym podobne` ↔ `itd.` pochodzi z kryteriów akceptacji, ale w polszczyźnie `i tym podobne` skraca się do `itp.`, a `itd.` oznacza `i tak dalej`. Trzeba to potwierdzić przed implementacją.
+Kryteria akceptacji podają dla `i tym podobne` skrót `itd.`. Zespół przyjmuje poprawną formę `itp.`, ponieważ `itd.` oznacza `i tak dalej`. Pełna lista skrótów jest do uzgodnienia z Product Ownerem.
 
 ### BR6. Rozwijanie skrótów (`expandAbbreviations`)
 
@@ -119,6 +118,7 @@ Operacja zastępuje rozpoznane skróty pełnymi wyrażeniami. Pierwsza litera ro
 - `Pan Prof. spóźnił się na zajęcia` → `Pan Profesor spóźnił się na zajęcia`
 - `dr` → `doktor`
 - `np.` → `na przykład`
+- `itp.` → `i tym podobne`
 - `Np. chleb i bułki` → `Na przykład chleb i bułki`
 
 ### BR7. Przygotowanie tekstu do LaTeX-a (`escapeLatex`)
