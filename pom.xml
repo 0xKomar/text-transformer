@@ -12,8 +12,10 @@
     </parent>
 
     <groupId>pl.put.poznan</groupId>
-    <artifactId>io-project-architecture</artifactId>
-    <version>0.1</version>
+    <artifactId>text-transformer</artifactId>
+    <version>0.1.0</version>
+    <name>Text Transformer</name>
+    <description>Aplikacja do transformacji tekstu dostępna przez REST API</description>
 
 	<properties>
         <java.version>11</java.version>
@@ -55,18 +57,6 @@
         </plugins>
     </build>
 
-    <repositories>
-        <repository>
-            <id>spring-releases</id>
-            <url>https://repo.spring.io/libs-release</url>
-        </repository>
-    </repositories>
-    <pluginRepositories>
-        <pluginRepository>
-            <id>spring-releases</id>
-            <url>https://repo.spring.io/libs-release</url>
-        </pluginRepository>
-    </pluginRepositories>
 
 
 </project>
