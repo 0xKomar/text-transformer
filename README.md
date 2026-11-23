@@ -175,3 +175,59 @@ Endpoint `POST /transform` przyjmuje żądania JSON w kodowaniu UTF-8.
 Interfejs graficzny korzysta z tego samego REST API co aplikacje zewnętrzne. Kontroler sprawdza żądanie i przekazuje tekst oraz listę operacji do modułu transformacji. Serwer będzie napisany w Javie z użyciem Spring Boot i budowany za pomocą Mavena.
 
 Moduł transformacji wykorzystuje wzorzec Dekorator. Dla każdego żądania składa łańcuch z wybranych operacji w podanej kolejności. Każdy dekorator wykonuje swoją operację na wyniku poprzedniego kroku.
+
+## Budowanie i uruchomienie
+
+[![Build](https://github.com/0xKomar/text-transformer/actions/workflows/build.yml/badge.svg)](https://github.com/0xKomar/text-transformer/actions/workflows/build.yml)
+
+Wymagania: JDK 11 i Maven.
+
+```bash
+mvn package
+java -jar target/text-transformer-0.1.0.jar
+```
+
+Aplikacja nasłuchuje na porcie `8080`. GitHub Actions buduje projekt po każdym pushu i w każdym pull requeście, a gotowy plik `.jar` zapisuje jako artefakt builda.
+
+## Zespół
+
+| Osoba | GitHub | Rola |
+| --- | --- | --- |
+| Igor Komar | [0xKomar](https://github.com/0xKomar) | _do uzupełnienia_ |
+| Bartosz Preus | [BartoszPreus](https://github.com/BartoszPreus) | _do uzupełnienia_ |
+| Oliwier Gołembiewski | [Ponioli](https://github.com/Ponioli) | _do uzupełnienia_ |
+| Wiktor Sinkiewicz | [WiktorSinkiewicz](https://github.com/WiktorSinkiewicz) | _do uzupełnienia_ |
+
+Rolę Product Ownera pełni prowadzący zajęcia. Wszyscy członkowie zespołu są developerami, a dwie osoby dodatkowo pełnią role Scrum Mastera i Proxy Product Ownera.
+
+**Daily Scrum:** _termin i miejsce do ustalenia_
+
+## Organizacja pracy
+
+- Elementy rejestru produktu mają etykietę [`PB Item`](https://github.com/0xKomar/text-transformer/issues?q=label%3A%22PB+Item%22). W opisie każdego elementu są ważność, pracochłonność, Business Value i kryteria akceptacji.
+- Zadania mają etykietę [`Task`](https://github.com/0xKomar/text-transformer/issues?q=label%3ATask) i są podpięte jako sub-issues pod swój element rejestru. Zadania z Definition of Done mają dodatkowo etykietę [`DoD`](https://github.com/0xKomar/text-transformer/issues?q=label%3ADoD).
+- Zakres sprintu wyznacza Milestone, np. [Sprint 1](https://github.com/0xKomar/text-transformer/milestone/1).
+- Kto bierze zadanie, przypisuje je do siebie. Zadanie zamyka się po wypełnieniu DoD, najlepiej przez `Closes #<numer>` w pull requeście.
+
+## Sprint 1
+
+**Cel sprintu:** dostarczyć działające REST API, które przyjmuje tekst i sekwencję transformacji w JSON i wykonuje zmianę wielkości liter (`upper`, `lower`, `capitalize`), `inverse`, zamianę liczb na tekst oraz zamianę wyrażeń na skróty i rozwijanie skrótów. Przyrost ma spełniać całe Definition of Done.
+
+**Pojemność:** 4 developerów × 10 h = 40 h.
+
+| Element rejestru produktu | Pracochłonność |
+| --- | --- |
+| [#1 REST API do wywoływania transformacji](https://github.com/0xKomar/text-transformer/issues/1) | 8 h |
+| [#2 Zmiana wielkości liter (upper, lower, capitalize)](https://github.com/0xKomar/text-transformer/issues/2) | 3 h |
+| [#3 Odwracanie tekstu z zachowaniem wielkości liter (inverse)](https://github.com/0xKomar/text-transformer/issues/3) | 3 h |
+| [#4 Zamiana liczb na tekst w języku polskim](https://github.com/0xKomar/text-transformer/issues/4) | 8 h |
+| [#5 Zamiana wyrażeń na skróty](https://github.com/0xKomar/text-transformer/issues/5) | 4 h |
+| [#6 Rozwijanie skrótów](https://github.com/0xKomar/text-transformer/issues/6) | 4 h |
+| Definition of Done i zadania punktowane ([#32](https://github.com/0xKomar/text-transformer/issues/32)–[#39](https://github.com/0xKomar/text-transformer/issues/39)) | 10 h |
+| **Razem** | **40 h** |
+
+Poza sprintem w rejestrze produktu zostają [#7 LaTeX](https://github.com/0xKomar/text-transformer/issues/7), [#8 usuwanie powtórzeń](https://github.com/0xKomar/text-transformer/issues/8) i [#9 GUI](https://github.com/0xKomar/text-transformer/issues/9).
+
+## Definition of Done
+
+Wymagania i punktacja są w dokumencie [Zasady punktowania sprintów](https://ekursy.put.poznan.pl/mod/url/view.php?id=1001442) na e-Kursach. Szacunki i rozbicie na zadania są też w arkuszu [`TextTransformer.xlsx`](TextTransformer.xlsx).
